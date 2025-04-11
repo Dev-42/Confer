@@ -2,11 +2,28 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 to-purple-200 dark:from-gray-950 dark:to-gray-900">
+        <div className="flex flex-col items-center">
+          <div className="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin" />
+          <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
+            Redirecting...
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex bg-gradient-to-r from-blue-100 to-purple-200 dark:from-gray-950 dark:to-gray-900">
       {/* Left Image Section */}
@@ -35,7 +52,10 @@ const Login = () => {
 
           {/* Google Button */}
           <Button
-            onClick={() => signIn("google")}
+            onClick={() => {
+              setLoading(true);
+              signIn("google");
+            }}
             className="w-full flex items-center justify-center gap-3 border border-gray-300 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-white dark:hover:text-black transition-all shadow-sm cursor-pointer"
             variant="outline"
           >
@@ -77,7 +97,10 @@ const Login = () => {
 
           {/* GitHub Button */}
           <Button
-            onClick={() => signIn("github")}
+            onClick={() => {
+              setLoading(true);
+              signIn("github");
+            }}
             className="w-full flex items-center justify-center gap-3 bg-black text-white hover:bg-white hover:text-black dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-all shadow-sm cursor-pointer"
             variant="ghost"
           >
