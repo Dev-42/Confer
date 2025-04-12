@@ -5,13 +5,10 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Header from "../shared/Header";
 import MeetingActions from "../shared/MeetingActions";
-import MeetingFeature from "../shared/MeetingFeature";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const { data: session, status } = useSession();
-  console.log("User session is", session);
-  console.log(status);
 
   useEffect(() => {
     if (status === "authenticated") {
@@ -40,24 +37,46 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div className="relative overflow-hidden min-h-screen flex flex-col bg-gradient-to-tr from-blue-50 via-white to-purple-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-all duration-300">
       <Header />
-      <main className="flex-grow p-8 mt-32">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            {/* Left div */}
-            <div className="md:w-1/2 mb-8 md:mb-0">
-              <h1 className="text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-                Video calls and meetings for everyone
-              </h1>
-              <p className="text-3xl text-gray-600 dark:text-gray-300 mb-12">
-                Connect, collaborate, and celebrate from anywhere with Confer
-              </p>
-              <MeetingActions />
-            </div>
-            <div className="md:w-1/2">
-              <MeetingFeature />
-            </div>
+
+      {/* Blurred blob background */}
+      <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-gradient-to-br from-blue-400 to-purple-500 opacity-30 blur-3xl rounded-full -z-10 animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-[30rem] h-[30rem] bg-gradient-to-tr from-fuchsia-400 to-blue-300 opacity-20 blur-3xl rounded-full -z-10 animate-pulse" />
+
+      <main className="flex-grow p-4 md:p-[-6] mt-20 md:mt-23 z-10 relative">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-16">
+          {/* Left Content */}
+          <div className="space-y-6 text-center md:text-left">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white">
+              Meet <span className="text-blue-600">face-to-face</span>
+              <br />
+              from <span className="text-purple-500">anywhere</span>
+            </h1>
+            <p className="text-lg md:text-2xl text-gray-700 dark:text-gray-300 max-w-xl">
+              High-quality, reliable, and secure video conferencing — whether
+              it’s for work, friends, or family.
+            </p>
+            <MeetingActions />
+          </div>
+
+          {/* Right: Video preview background */}
+          <div className="relative rounded-3xl shadow-xl overflow-hidden border border-white/20 dark:border-white/10">
+            <video
+              autoPlay
+              muted
+              loop
+              preload="auto"
+              className="w-full h-full object-cover rounded-3xl"
+              poster="/poster.jpg"
+            >
+              <source
+                src="https://res.cloudinary.com/dxwxn2ncy/video/upload/v1744465767/ConferfinalVideo_ra6cso.webm"
+                type="video/webm"
+              />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute inset-0 bg-black/20 rounded-3xl" />
           </div>
         </div>
       </main>
