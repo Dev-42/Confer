@@ -85,19 +85,21 @@ const MeetingActions = () => {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <div className="flex w-full sm:w-auto relative">
-          <span className="absolute left-2 top-1/2 transform -translate-y-1/2">
-            <LinkIcon className="w-4 h-4 text-gray-400" />
+        <div className="flex w-full sm:w-auto relative rounded-xl shadow-sm overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+          <span className="absolute left-3 top-1/2 -translate-y-1/2">
+            <LinkIcon className="w-5 h-5 text-gray-400 dark:text-gray-500" />
           </span>
+
           <Input
             placeholder="Enter a code or link"
-            className="pl-8 rounded-r-none pr-10"
+            className="pl-10 pr-4 py-3 w-full sm:w-[20rem] text-sm rounded-none border-0 focus:outline-none focus:ring-0 bg-transparent text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
             value={meetingLink}
             onChange={(e) => setMeetingLink(e.target.value)}
           />
+
           <Button
-            variant="secondary"
-            className="rounded-l-none"
+            variant="default"
+            className="rounded-none rounded-r-xl px-5 bg-gradient-to-r from-orange-400 to-pink-500 hover:from-orange-500 hover:to-pink-600 text-white font-semibold transition"
             onClick={handleJoinMeeting}
           >
             Join
