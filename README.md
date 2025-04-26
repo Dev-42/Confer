@@ -1,6 +1,6 @@
 # 📹 Confer — Modern Video Conferencing App
 
-[Live Demo 🔗](https://confer-seven.vercel.app/secureConfer)
+[🌐 Live Demo](https://confer-seven.vercel.app/secureConfer)
 
 Confer is a **next-generation video conferencing application** built with **Next.js 15**, **NextAuth.js**, **ZEGOCLOUD**, and **Tailwind CSS**.  
 Whether you're looking to **connect, collaborate, or communicate** — Confer provides **crystal-clear video**, **real-time collaboration**, and **top-notch security** — all in one seamless platform.
@@ -8,6 +8,12 @@ Whether you're looking to **connect, collaborate, or communicate** — Confer pr
 Your ultimate **VideoCallApp**, reimagined for productivity, privacy, and performance.
 
 ---
+
+## 🎬 Demo Video
+
+> 🔽 Watch Confer in Action!
+
+[![Confer Demo](https://res.cloudinary.com/dxwxn2ncy/image/upload/v1745649728/confer1_bseqkp.png)](https://www.youtube.com/watch?v=9iyUdxhzHg4)
 
 ## ✨ Features
 
@@ -74,7 +80,7 @@ Your ultimate **VideoCallApp**, reimagined for productivity, privacy, and perfor
 
 ```
 /components   // Reusable UI components
-/app        // Next.js routes
+/app          // Next.js routes
 /styles       // Tailwind & custom styles
 /lib          // Utilities and helpers
 /public       // Static assets
@@ -107,7 +113,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ## 🧑‍💻 About the Developer
 
 Made with ❤️ by **Dev Bhattacharya**.  
-Let's connect on [LinkedIn](https://www.linkedin.com/in/devbhattacharya)!
+Let's connect on [LinkedIn](https://www.linkedin.com/in/dev42/)
 
 ---
 
