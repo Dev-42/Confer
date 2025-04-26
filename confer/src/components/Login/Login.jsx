@@ -109,7 +109,7 @@ const Login = () => {
           </Button>
 
           {/* Skip Login Link */}
-          <p className="text-sm text-center text-gray-600 dark:text-gray-400">
+{/*           <p className="text-sm text-center text-gray-600 dark:text-gray-400">
             Don’t want to login/register?
             <Link
               href="/landing"
@@ -117,7 +117,7 @@ const Login = () => {
             >
               Click here
             </Link>
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
